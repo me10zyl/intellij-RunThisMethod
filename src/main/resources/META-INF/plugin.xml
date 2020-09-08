@@ -1,13 +1,14 @@
 <idea-plugin>
     <id>org.yilnz.intellij-runthismethod</id>
     <name>RunThisMethod</name>
-    <vendor email="me10zyl@qq.com" url="http://www.yilnz.com">Rainy Mood</vendor>
+    <vendor email="me10zyl@qq.com" url="http://www.yilnz.com">me10zyl</vendor>
 
     <description><![CDATA[
-    安装此插件可直接运行Spring中的某个方法!<br>
+    此插件可直接运行Spring中的某个方法!<br>
     This plugin can run method managed by Spring directly!<br>
-
-    <code>
+    使用方式:<br>
+    1. 将以下代码拷贝到你的项目中<br>
+    <pre>
     @Component
     public class ContextHolder implements ApplicationContextAware {
         private static ApplicationContext applicationContext;
@@ -19,7 +20,10 @@
             return applicationContext;
         }
     }
-    </code>
+    <pre>
+    2. 在要运行的方法上点击右键, 点击Run This Method, 此方法就被执行了 (可打断点) <br>
+    <img src='https://raw.githubusercontent.com/me10zyl/intellij-RunThisMethod/master/preview1.png' /> <br>
+    <img src='https://raw.githubusercontent.com/me10zyl/intellij-RunThisMethod/master/preview2.png' />
     ]]></description>
 
     <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
@@ -34,9 +38,13 @@
 
     <actions>
         <!-- Add your actions here -->
+        <group id="Yilnz.PluginGroup"  description="yilnz's plugin group">
+            <add-to-group group-id="EditorPopupMenu" anchor="first" />
+            <separator />
+        </group>
         <action id="com.yilnz.intellij.runthismethod.RunThisMethod"
-                class="com.yilnz.intellij.runthismethod.RunThisMethod" text="RunThisMethod" description="RunThisMethod" >
-            <add-to-group group-id="EditorPopupMenu"  anchor="last"/>
+                class="com.yilnz.intellij.runthismethod.RunThisMethod" text="Run This Method" description="RunThisMethod" >
+            <add-to-group group-id="Yilnz.PluginGroup"  anchor="first"/>
         </action>
     </actions>
 </idea-plugin>
