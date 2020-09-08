@@ -1,13 +1,16 @@
 plugins {
     id 'java'
-    id 'org.jetbrains.intellij' version '0.4.22'
+    id 'org.jetbrains.intellij' version '0.4.15'
 }
+
+sourceCompatibility = 1.8
 
 group 'com.yilnz'
 version '1.0'
 
 repositories {
     mavenCentral()
+    mavenLocal()
 }
 
 dependencies {
@@ -16,10 +19,12 @@ dependencies {
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
-    version '2020.1.2'
-    plugins 'java'
+    version '2018.3'
+    java
 }
 patchPluginXml {
+    sinceBuild '173.0'
+    untilBuild ''
     changeNotes """
      安装此插件可直接运行Spring中的某个方法!<br>
     This plugin can run method managed by Spring directly!<br>

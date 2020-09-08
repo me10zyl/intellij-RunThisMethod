@@ -1,6 +1,6 @@
 <idea-plugin>
     <id>org.yilnz.intellij-runthismethod</id>
-    <name>RunThisMethod</name>
+    <name>Run This Method</name>
     <vendor email="me10zyl@qq.com" url="http://www.yilnz.com">me10zyl</vendor>
 
     <description><![CDATA[
@@ -21,7 +21,8 @@
         }
     }
     <pre>
-    2. 在要运行的spring托管的方法上点击右键, 点击<code>Run this Method</code>, 此方法就被执行了 (可打断点) - Click <code>Run this Method</code> on your spring IOC method, this method
+    2. 在要运行的spring托管的方法上点击右键, 点击<code>Run this Method</code>, 此方法就被执行了 (可打断点) <br>
+    Click <code>Run this Method</code> on your spring IOC method, this method
     has been invoked(Support breakpoint)<br>
     <img src='https://raw.githubusercontent.com/me10zyl/intellij-RunThisMethod/master/preview1.png' /> <br>
     <img src='https://raw.githubusercontent.com/me10zyl/intellij-RunThisMethod/master/preview2.png' />
@@ -33,8 +34,11 @@
 
     <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
          on how to target different products -->
-    <depends>com.intellij.modules.platform</depends>
-    <depends>com.intellij.modules.java</depends>
+<!--    <depends>com.intellij.modules.platform</depends>-->
+<!--    <depends>com.intellij.modules.java</depends>-->
+    <depends>com.intellij.modules.lang</depends>
+
+    <idea-version since-build="173.0"/>
 
 
     <extensions defaultExtensionNs="com.intellij">
