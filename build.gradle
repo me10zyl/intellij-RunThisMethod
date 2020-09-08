@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+    id 'org.jetbrains.intellij' version '0.4.22'
+}
+
+group 'com.yilnz'
+version '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+// See https://github.com/JetBrains/gradle-intellij-plugin/
+intellij {
+    version '2020.1.2'
+    plugins 'java'
+}
+patchPluginXml {
+    changeNotes """
+     安装此插件可直接运行Spring中的某个方法!<br>
+    This plugin can run method managed by Spring directly!<br>"""
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}

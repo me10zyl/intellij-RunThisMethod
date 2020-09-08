@@ -1,0 +1,42 @@
+<idea-plugin>
+    <id>org.yilnz.intellij-runthismethod</id>
+    <name>RunThisMethod</name>
+    <vendor email="me10zyl@qq.com" url="http://www.yilnz.com">Rainy Mood</vendor>
+
+    <description><![CDATA[
+    安装此插件可直接运行Spring中的某个方法!<br>
+    This plugin can run method managed by Spring directly!<br>
+
+    <code>
+    @Component
+    public class ContextHolder implements ApplicationContextAware {
+        private static ApplicationContext applicationContext;
+        @Override
+        public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+            ContextHolder.applicationContext = applicationContext;
+        }
+        public static ApplicationContext getContext(){
+            return applicationContext;
+        }
+    }
+    </code>
+    ]]></description>
+
+    <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.java</depends>
+
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+        <action id="com.yilnz.intellij.runthismethod.RunThisMethod"
+                class="com.yilnz.intellij.runthismethod.RunThisMethod" text="RunThisMethod" description="RunThisMethod" >
+            <add-to-group group-id="EditorPopupMenu"  anchor="last"/>
+        </action>
+    </actions>
+</idea-plugin>
