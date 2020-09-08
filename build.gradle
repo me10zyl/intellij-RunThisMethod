@@ -22,7 +22,9 @@ intellij {
 patchPluginXml {
     changeNotes """
      安装此插件可直接运行Spring中的某个方法!<br>
-    This plugin can run method managed by Spring directly!<br>"""
+    This plugin can run method managed by Spring directly!<br>
+    1.0 plugin inited
+    """
 }
 
 tasks.withType(JavaCompile) {

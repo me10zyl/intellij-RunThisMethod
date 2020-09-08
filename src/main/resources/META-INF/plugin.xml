@@ -7,7 +7,7 @@
     此插件可直接运行Spring中的某个方法!<br>
     This plugin can run method managed by Spring directly!<br>
     使用方式:<br>
-    1. 将以下代码拷贝到你的项目中<br>
+    1. 将以下代码拷贝到你的项目中 - Copy following code to your project<br>
     <pre>
     @Component
     public class ContextHolder implements ApplicationContextAware {
@@ -21,9 +21,14 @@
         }
     }
     <pre>
-    2. 在要运行的方法上点击右键, 点击Run This Method, 此方法就被执行了 (可打断点) <br>
+    2. 在要运行的spring托管的方法上点击右键, 点击<code>Run this Method</code>, 此方法就被执行了 (可打断点) - Click <code>Run this Method</code> on your spring IOC method, this method
+    has been invoked(Support breakpoint)<br>
     <img src='https://raw.githubusercontent.com/me10zyl/intellij-RunThisMethod/master/preview1.png' /> <br>
     <img src='https://raw.githubusercontent.com/me10zyl/intellij-RunThisMethod/master/preview2.png' />
+    <br/>
+    <footer>
+        <a href='https://github.com/me10zyl/intellij-RunThisMethod'>Contact me: https://github.com/me10zyl/intellij-RunThisMethod</a>
+    </footer>
     ]]></description>
 
     <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
