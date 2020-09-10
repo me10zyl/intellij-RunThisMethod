@@ -62,9 +62,20 @@ public class RunThisMethod extends AnAction {
         }
         JBPopupFactory pop = JBPopupFactory.getInstance();
         ListPopupStep<String> listPopupStep = new BaseListPopupStep<String>("Run This Method - Choose process", strings) {
+
+            String errorMessage = null;
+
             @Override
             public @NotNull String getTextFor(String value) {
                 return super.getTextFor(value);
+            }
+
+            @Override
+            public PopupStep doFinalStep(@Nullable Runnable runnable) {
+                if(errorMessage != null){
+                    Messages.showErrorDialog(errorMessage, "Run This Method");
+                }
+                return super.doFinalStep(runnable);
             }
 
             @Override
@@ -121,7 +132,7 @@ public class RunThisMethod extends AnAction {
                     AgentRunner.run( pid, contextHolder, runComand);
                 } catch (Exception exception) {
                     exception.printStackTrace();
-                    Messages.showErrorDialog(exception.getMessage(), "Run This Method");
+                    errorMessage = "ERROR:" + exception.getMessage();
                 }
                 return super.onChosen(selectedValue, finalChoice);
             }
