@@ -1,5 +1,5 @@
 <idea-plugin>
-    <id>org.yilnz.intellij-runthismethod</id>
+    <id>com.yilnz.intellij-runthismethod</id>
     <name>Run This Method</name>
     <vendor email="me10zyl@qq.com" url="http://www.yilnz.com">me10zyl</vendor>
 
